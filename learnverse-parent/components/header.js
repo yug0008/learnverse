@@ -1,5 +1,7 @@
 // components/header.js
 import { useState, useEffect } from 'react';
+import React from "react";
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FaTimes, 
@@ -60,76 +62,101 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const GoalSelectionModal = () => (
-    <AnimatePresence>
-      {isModalOpen && (
+const GoalSelectionModal = () => (
+  <AnimatePresence>
+    {isModalOpen && (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-50 flex items-start sm:items-center justify-center bg-black/60 backdrop-blur-lg p-5 sm:p-4"
+        onClick={() => setIsModalOpen(false)}
+      >
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-lg"
-          onClick={() => setIsModalOpen(false)}
+          initial={{ scale: 0.9, opacity: 0, y: 20 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.9, opacity: 0, y: 20 }}
+          transition={{ type: "spring", damping: 25 }}
+          className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl 
+                     p-5 sm:p-6 md:p-8 mx-auto w-full 
+                     max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl 
+                     shadow-2xl max-h-[90vh] overflow-y-auto mt-6 sm:mt-0"
+          onClick={(e) => e.stopPropagation()}
         >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0, y: 20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.9, opacity: 0, y: 20 }}
-            transition={{ type: "spring", damping: 25 }}
-            className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 mx-4 max-w-4xl w-full shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
+          {/* Close Button */}
+          <motion.button
+            onClick={() => setIsModalOpen(false)}
+            whileHover={{ scale: 1.1, rotate: 90 }}
+            whileTap={{ scale: 0.9 }}
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 text-white/60 hover:text-white transition-colors duration-200 p-2 rounded-xl bg-white/10 hover:bg-white/20 z-10"
           >
-            <h2 className="text-3xl font-bold text-white text-center mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Select Your Goal
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {navigationItems.map((item, index) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    y: -5,
-                    transition: { type: "spring", stiffness: 400, damping: 17 }
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 text-center cursor-pointer shadow-xl hover:shadow-2xl hover:border-blue-400/30 transition-all duration-300"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  {/* Icon Container */}
-                  <div className="relative z-10 flex justify-center mb-4">
-                    <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl group-hover:scale-110 transition-transform duration-300">
-                      {item.icon}
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-white relative z-10 mb-2">
-                    {item.name}
-                  </h3>
-                  <p className="text-blue-200/60 text-sm relative z-10">
-                    Start your journey
-                  </p>
-                </motion.a>
-              ))}
-            </div>
+            <FaTimes className="w-4 h-4 sm:w-5 sm:h-5" />
+          </motion.button>
 
+          {/* Title */}
+          <h2 className="text-lg sm:text-2xl md:text-3xl font-bold text-white text-center mb-4 sm:mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent px-2">
+            Select Your Goal
+          </h2>
+
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 md:gap-6">
+            {navigationItems.map((item, index) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{
+                  scale: window.innerWidth >= 640 ? 1.05 : 1.02,
+                  y: window.innerWidth >= 640 ? -5 : -2,
+                  transition: { type: "spring", stiffness: 400, damping: 17 }
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg 
+                           border border-white/10 rounded-xl sm:rounded-2xl 
+                           p-3 sm:p-6 text-center cursor-pointer shadow-lg hover:shadow-xl 
+                           hover:border-blue-400/30 transition-all duration-300"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {/* Icon */}
+                <div className="relative z-10 flex justify-center mb-2 sm:mb-4">
+                  <div className="p-2 sm:p-3 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl sm:rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                    {React.cloneElement(item.icon, {
+                      className: "w-4 h-4 sm:w-5 sm:h-5"
+                    })}
+                  </div>
+                </div>
+
+                {/* Text */}
+                <h3 className="text-sm sm:text-lg md:text-xl font-semibold text-white relative z-10 mb-1 sm:mb-2">
+                  {item.name}
+                </h3>
+                <p className="text-blue-200/60 text-xs sm:text-sm relative z-10">
+                  Start your journey
+                </p>
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Close */}
+          <div className="mt-5 sm:mt-8 text-center">
             <motion.button
               onClick={() => setIsModalOpen(false)}
-              whileHover={{ scale: 1.1, rotate: 90 }}
-              whileTap={{ scale: 0.9 }}
-              className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors duration-200 p-2 rounded-xl bg-white/10 hover:bg-white/20"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-5 py-2 bg-white/20 backdrop-blur-sm border border-white/30 
+                         text-white rounded-2xl font-medium text-sm sm:text-base hover:bg-white/30 transition-all duration-300"
             >
-              <FaTimes className="w-5 h-5" />
+              Close
             </motion.button>
-          </motion.div>
+          </div>
         </motion.div>
-      )}
-    </AnimatePresence>
-  );
+      </motion.div>
+    )}
+  </AnimatePresence>
+);
 
   const MobileMenu = () => (
     <AnimatePresence>

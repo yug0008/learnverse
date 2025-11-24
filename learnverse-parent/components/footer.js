@@ -36,31 +36,31 @@ const Footer = () => {
           name: 'Engineering', 
           href: 'https://engineering.learnverse.com',
           icon: <FaGraduationCap className="w-4 h-4" />,
-          color: 'from-blue-500 to-cyan-500'
+          color: 'from-blue-600 to-cyan-600'
         },
         { 
           name: 'Medical', 
           href: 'https://medical.learnverse.com',
           icon: <FaStethoscope className="w-4 h-4" />,
-          color: 'from-green-500 to-emerald-500'
+          color: 'from-green-600 to-emerald-600'
         },
         { 
           name: 'Railway', 
           href: 'https://railway.learnverse.com',
           icon: <FaTrain className="w-4 h-4" />,
-          color: 'from-orange-500 to-red-500'
+          color: 'from-orange-600 to-red-600'
         },
         { 
           name: 'SSC', 
           href: 'https://ssc.learnverse.com',
           icon: <FaUserTie className="w-4 h-4" />,
-          color: 'from-purple-500 to-pink-500'
+          color: 'from-purple-600 to-pink-600'
         },
         { 
           name: 'Boards', 
           href: 'https://boards.learnverse.com',
           icon: <FaChalkboardTeacher className="w-4 h-4" />,
-          color: 'from-indigo-500 to-blue-500'
+          color: 'from-indigo-600 to-blue-600'
         }
       ]
     },
@@ -113,17 +113,17 @@ const Footer = () => {
       {isMobile ? (
         <button
           onClick={() => toggleSection(title)}
-          className="flex items-center justify-between w-full text-left py-4 border-b border-white/10 group"
+          className="flex items-center justify-between w-full text-left py-4 border-b border-gray-200 group"
         >
           <div className="flex items-center space-x-3">
-            <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl text-white">
+            <div className="p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white">
               {icon}
             </div>
-            <span className="text-white font-semibold text-lg group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+            <span className="text-gray-800 font-semibold text-lg group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
               {title}
             </span>
           </div>
-          <div className={`w-6 h-6 text-white/60 group-hover:text-white transition-colors duration-300 transform ${openSections[title] ? 'rotate-180' : ''}`}>
+          <div className={`w-6 h-6 text-gray-600 group-hover:text-gray-800 transition-colors duration-300 transform ${openSections[title] ? 'rotate-180' : ''}`}>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
@@ -131,10 +131,10 @@ const Footer = () => {
         </button>
       ) : (
         <div className="flex items-center space-x-3 mb-6">
-          <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl text-white shadow-lg">
+          <div className="p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white shadow-lg">
             {icon}
           </div>
-          <h3 className="text-white font-bold text-xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h3 className="text-gray-800 font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             {title}
           </h3>
         </div>
@@ -146,30 +146,30 @@ const Footer = () => {
             <div key={link.name} className="group">
               <a
                 href={link.href}
-                className="flex items-center space-x-3 p-3 rounded-2xl bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20 transition-all duration-300 group"
+                className="flex items-center space-x-3 p-3 rounded-2xl bg-gray-50 hover:bg-white backdrop-blur-sm border border-gray-200 hover:border-blue-200 transition-all duration-300 group shadow-sm hover:shadow-md"
               >
                 {link.color ? (
                   <div className={`p-2 bg-gradient-to-r ${link.color} rounded-xl text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     {link.icon}
                   </div>
                 ) : link.icon ? (
-                  <div className="p-2 bg-gradient-to-r from-gray-600 to-gray-700 rounded-xl text-white/80 group-hover:text-white group-hover:from-blue-500 group-hover:to-purple-500 transition-all duration-300">
+                  <div className="p-2 bg-gradient-to-r from-gray-500 to-gray-600 rounded-xl text-white group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
                     <SocialIcon platform={link.icon} className="w-4 h-4" />
                   </div>
                 ) : null}
                 
                 <div className="flex-1 min-w-0">
-                  <div className="text-white font-medium group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 group-hover:bg-clip-text transition-all duration-300">
+                  <div className="text-gray-700 font-medium group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
                     {link.name}
                   </div>
                   {link.description && (
-                    <div className="text-white/40 text-sm group-hover:text-white/60 transition-colors duration-300">
+                    <div className="text-gray-500 text-sm group-hover:text-gray-700 transition-colors duration-300">
                       {link.description}
                     </div>
                   )}
                 </div>
                 
-                <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </a>
             </div>
           ))}
@@ -187,14 +187,14 @@ const Footer = () => {
     };
 
     return (
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-white/10 backdrop-blur-xl p-8">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5" />
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 backdrop-blur-xl p-8 shadow-lg">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-100/50 to-purple-100/50" />
         <div className="relative z-10">
           <div className="flex items-center space-x-3 mb-4">
-            <FaRegEnvelope className="w-6 h-6 text-blue-400" />
-            <h3 className="text-white font-bold text-xl">Stay Updated</h3>
+            <FaRegEnvelope className="w-6 h-6 text-blue-600" />
+            <h3 className="text-gray-800 font-bold text-xl">Stay Updated</h3>
           </div>
-          <p className="text-white/60 mb-6">
+          <p className="text-gray-600 mb-6">
             Get the latest updates on courses, features, and learning tips.
           </p>
           
@@ -203,7 +203,7 @@ const Footer = () => {
               <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaHeart className="w-6 h-6 text-white" />
               </div>
-              <p className="text-white font-semibold">Welcome to the LearnVerse family! 🎉</p>
+              <p className="text-gray-800 font-semibold">Welcome to the LearnVerse family! 🎉</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -213,16 +213,16 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-white/40 focus:outline-none focus:border-blue-400/50 transition-colors duration-300 backdrop-blur-sm"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-2xl text-gray-800 placeholder-gray-500 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all duration-300"
                   required
                 />
               </div>
               <button
                 type="submit"
-                className="w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 group"
+                className="w-full py-3 px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center space-x-2 group"
               >
                 <span>Subscribe</span>
-                <FaRocket className="w-4 h-4" />
+                <FaRocket className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </form>
           )}
@@ -232,15 +232,15 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-[#0A0F1C] to-[#050811] border-t border-white/5">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white border-t border-gray-200">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-40 left-20 w-36 h-36 bg-cyan-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-10 left-10 w-48 h-48 bg-blue-100 rounded-full blur-3xl opacity-50" />
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-100 rounded-full blur-3xl opacity-50" />
+        <div className="absolute bottom-40 left-20 w-36 h-36 bg-cyan-100 rounded-full blur-3xl opacity-50" />
         
         {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -256,12 +256,12 @@ const Footer = () => {
                   alt="LearnVerse" 
                   width={180}
                   height={62}
-                  className="object-contain brightness-0 invert"
+                  className="object-contain"
                 />
-                <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full" />
+                <div className="w-3 h-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full" />
               </div>
               
-              <p className="text-white/60 text-lg leading-relaxed font-light">
+              <p className="text-gray-600 text-lg leading-relaxed font-light">
                 Empowering millions of learners worldwide with cutting-edge education technology and immersive learning experiences.
               </p>
               
@@ -270,7 +270,7 @@ const Footer = () => {
                   <a
                     key={social.name}
                     href={social.href}
-                    className="p-3 bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl text-white/60 hover:text-white transition-all duration-300 group"
+                    className="p-3 bg-white hover:bg-gray-50 backdrop-blur-sm border border-gray-300 rounded-2xl text-gray-600 hover:text-gray-800 transition-all duration-300 group shadow-sm hover:shadow-md"
                   >
                     <SocialIcon platform={social.icon} className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   </a>
@@ -308,10 +308,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 py-8 flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
-          <p className="text-white/40 text-sm font-light flex items-center space-x-2">
+        <div className="border-t border-gray-200 py-8 flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
+          <p className="text-gray-500 text-sm font-light flex items-center space-x-2">
             <span>© {new Date().getFullYear()} LearnVerse. Crafted with</span>
-            <FaHeart className="w-3 h-3 text-red-400" />
+            <FaHeart className="w-3 h-3 text-red-500" />
             <span>for the future of education.</span>
           </p>
           
@@ -320,7 +320,7 @@ const Footer = () => {
               <a
                 key={item}
                 href={`/${item.toLowerCase().replace(' ', '-')}`}
-                className="text-white/40 hover:text-white transition-all duration-300 font-light"
+                className="text-gray-500 hover:text-gray-800 transition-all duration-300 font-light"
               >
                 {item}
               </a>

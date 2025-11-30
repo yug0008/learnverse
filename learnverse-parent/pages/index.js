@@ -86,7 +86,7 @@ const Hero = () => {
             className="text-lg sm:text-xl text-slate-600 max-w-lg leading-relaxed font-['Inter']"
           >
             Experience the future of education with adaptive AI curriculums, 
-            immersive live classes, and a community of global learners at LearnVerse.
+            immersive live classes, and a community of global learners at SarasLearn.
           </motion.p>
 
           <motion.div 
@@ -165,7 +165,7 @@ const Hero = () => {
              <div className="flex justify-between items-center mb-4">
                 <div className="space-y-1">
                   <div className="h-1.5 w-16 bg-slate-800/10 rounded"></div>
-                  <div className="h-3 w-28 bg-slate-800/20 rounded font-semibold text-slate-700 text-sm">LearnVerse Pro</div>
+                  <div className="h-3 w-28 bg-slate-800/20 rounded font-semibold text-slate-700 text-sm">SarasLearn Pro</div>
                 </div>
                 <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-purple-600 shadow-lg"></div>
              </div>
@@ -259,7 +259,7 @@ const Features = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-['Inter']">
-            Why Choose <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">LearnVerse</span>?
+            Why Choose <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">SarasLearn</span>?
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-['Inter']">
             We provide a comprehensive ecosystem designed to maximize your learning potential 
@@ -417,7 +417,7 @@ const Testimonials = () => {
   {
     name: "Arjun Mehta",
     role: "JEE Aspirant",
-    text: "LearnVerse ke lectures aur practice system ne meri preparation ka level hi change kar diya. 3D explanations ne Physics ko itna easy bana diya jitna kabhi socha nahi tha.",
+    text: "SarasLearn ke lectures aur practice system ne meri preparation ka level hi change kar diya. 3D explanations ne Physics ko itna easy bana diya jitna kabhi socha nahi tha.",
     img: "https://picsum.photos/seed/alex/150/150"
   },
   {
@@ -429,7 +429,7 @@ const Testimonials = () => {
   {
     name: "Rohit Singh",
     role: "Railway Aspirant",
-    text: "LearnVerse sirf padhai nahi, ek proper guidance system deta hai. Clean UI, smart tests, aur detailed analysis ne meri speed & accuracy dono improve ki.",
+    text: "SarasLearn sirf padhai nahi, ek proper guidance system deta hai. Clean UI, smart tests, aur detailed analysis ne meri speed & accuracy dono improve ki.",
     img: "https://picsum.photos/seed/david/150/150"
   }
 ];
@@ -453,7 +453,7 @@ const Testimonials = () => {
             Loved by <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Learners</span>
           </h2>
           <p className="text-lg text-slate-600 max-w-xl mx-auto font-['Inter']">
-            Join thousands of successful students who transformed their learning journey with LearnVerse
+            Join thousands of successful students who transformed their learning journey with SarasLearn
           </p>
         </motion.div>
         

@@ -34,31 +34,31 @@ const Footer = () => {
       links: [
         { 
           name: 'Engineering', 
-          href: 'https://engineering.learnverse.com',
+          href: '/upcoming',
           icon: <FaGraduationCap className="w-4 h-4" />,
           color: 'from-blue-600 to-cyan-600'
         },
         { 
           name: 'Medical', 
-          href: 'https://medical.learnverse.com',
+          href: 'https://biologykingdom1.vercel.app/',
           icon: <FaStethoscope className="w-4 h-4" />,
           color: 'from-green-600 to-emerald-600'
         },
         { 
           name: 'Railway', 
-          href: 'https://railway.learnverse.com',
+          href: '/upcoming',
           icon: <FaTrain className="w-4 h-4" />,
           color: 'from-orange-600 to-red-600'
         },
         { 
           name: 'SSC', 
-          href: 'https://ssc.learnverse.com',
+          href: '/upcoming',
           icon: <FaUserTie className="w-4 h-4" />,
           color: 'from-purple-600 to-pink-600'
         },
         { 
           name: 'Boards', 
-          href: 'https://boards.learnverse.com',
+          href: '/upcoming',
           icon: <FaChalkboardTeacher className="w-4 h-4" />,
           color: 'from-indigo-600 to-blue-600'
         }

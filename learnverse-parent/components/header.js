@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FaTimes, 
   FaInstagram, 
+  FaMedal,
+  FaShieldAlt,
   FaYoutube, 
   FaLinkedin, 
   FaTwitter,
@@ -22,31 +24,34 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navigationItems = [
-    { 
-      name: 'Engineering', 
-      href: 'https://engineering.learnverse.com',
-      icon: <FaGraduationCap className="w-5 h-5" />
+{ 
+      name: 'Boards', 
+      href: '/upcoming',
+      icon: <FaChalkboardTeacher className="w-5 h-5" />
     },
     { 
-      name: 'Medical', 
-      href: 'https://medical.learnverse.com',
+      name: 'NEET UG', 
+      href: 'https://biologykingdom1.vercel.app/',
       icon: <FaStethoscope className="w-5 h-5" />
     },
-    { 
-      name: 'Railway', 
-      href: 'https://railway.learnverse.com',
-      icon: <FaTrain className="w-5 h-5" />
+     { 
+      name: 'Battalionary', 
+      href: '/upcoming',
+      icon: <FaShieldAlt className="w-5 h-5" />
     },
     { 
-      name: 'SSC', 
-      href: 'https://ssc.learnverse.com',
-      icon: <FaUserTie className="w-5 h-5" />
+      name: 'Engineering', 
+      href: '/upcoming',
+      icon: <FaGraduationCap className="w-5 h-5" />
     },
+    
+   
     { 
-      name: 'Boards', 
-      href: 'https://boards.learnverse.com',
-      icon: <FaChalkboardTeacher className="w-5 h-5" />
-    }
+      name: 'Defence', 
+      href: '/upcoming',
+      icon: <FaMedal className="w-5 h-5" />
+    },
+    
   ];
 
   useEffect(() => {
@@ -195,7 +200,7 @@ const GoalSelectionModal = () => (
               >
                 <img 
                   src="/logolv.png" 
-                  alt="LearnVerse" 
+                  alt="SarasLearn" 
                   width={120}
                   height={41}
                   className="object-contain"
@@ -234,7 +239,7 @@ const GoalSelectionModal = () => (
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full py-4 px-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
+                className="w-full py-4 px-6 bg-gradient-to-r from-yellow-400 via-orange-400 to-amber-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <span>Get Started</span>
                 <FaGraduationCap className="w-4 h-4" />
@@ -286,32 +291,33 @@ const GoalSelectionModal = () => (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo with Image */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-3"
-            >
-              <img 
-                src="/logolv.png" 
-                alt="LearnVerse" 
-                width={160}
-                height={55}
-                className={`object-contain hidden lg:block transition-all duration-500 ${
-                  isScrolled ? 'filter-none' : 'brightness-0 invert'
-                }`}
-              />
-              <img 
-                src="/logolv.png" 
-                alt="LearnVerse" 
-                width={120}
-                height={41}
-                className={`object-contain lg:hidden transition-all duration-500 ${
-                  isScrolled ? 'filter-none' : 'brightness-0 invert'
-                }`}
-              />
-              <div className={`w-2 h-2 rounded-full animate-pulse hidden lg:block transition-colors duration-500 ${
-                isScrolled ? 'bg-blue-500' : 'bg-white'
-              }`} />
-            </motion.div>
+<motion.div
+  whileHover={{ scale: 1.05 }}
+  className="flex items-center space-x-3"
+>
+  <img 
+    src={isScrolled ? "/logolv.png" : "/logolvvv.png"} 
+    alt="SarasLearn" 
+    width={180}
+    height={55}
+    className={`object-contain hidden lg:block transition-all duration-500`}
+  />
+
+  <img 
+    src={isScrolled ? "/logolv.png" : "/logolvvv.png"}  
+    alt="SarasLearn Mobile" 
+    width={120}
+    height={41}
+    className={`object-contain lg:hidden transition-all duration-500`}
+  />
+
+  <div 
+    className={`w-2 h-2 rounded-full animate-pulse hidden lg:block transition-colors duration-500 ${
+      isScrolled ? 'bg-blue-500' : 'bg-white'
+    }`} 
+  />
+</motion.div>
+
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
@@ -330,7 +336,7 @@ const GoalSelectionModal = () => (
                   }`}
                 >
                   <div className={`group-hover:scale-110 transition-transform duration-300 ${
-                    isScrolled ? 'text-blue-500' : 'text-white'
+                    isScrolled ? 'text-orange-700' : 'text-white'
                   }`}>
                     {item.icon}
                   </div>
@@ -358,15 +364,15 @@ const GoalSelectionModal = () => (
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-2.5 rounded-2xl font-semibold transition-all duration-500 relative overflow-hidden flex items-center space-x-2 ${
                   isScrolled 
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:shadow-xl' 
+                    ? 'bg-gradient-to-r from-orange-700 via-yellow-600 to-orange-700 text-white shadow-lg hover:shadow-xl' 
                     : 'bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 hover:border-white/40'
                 }`}
               >
-                <span className="relative z-10">Get Started</span>
+                <span className="relative z-10">Start Learning</span>
                 <FaGraduationCap className="w-4 h-4 relative z-10" />
                 {isScrolled && (
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-400 to-amber-700 opacity-0 hover:opacity-100 transition-opacity duration-300"
                     whileHover={{ opacity: 1 }}
                   />
                 )}

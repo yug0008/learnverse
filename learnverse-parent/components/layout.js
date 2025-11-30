@@ -5,11 +5,12 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      
-      <main style={{ minHeight: "80vh" }}>
+
+      {/* FIX: Add padding to prevent overlap */}
+      <main className="pt-[90px]" style={{ minHeight: "80vh" }}>
         {children}
       </main>
-      
+
       <Footer />
     </>
   );

@@ -5,7 +5,7 @@ export default function Upcoming() {
   return (
     <>
       <Head>
-        <title>Upcoming · SarasLearn</title>
+        <title>Upcoming · biologykingdom</title>
       </Head>
 
       <div className="min-h-screen flex flex-col items-center justify-center p-6">
@@ -23,8 +23,8 @@ export default function Upcoming() {
             className="flex justify-center mb-6"
           >
             <img 
-              src="/logolv.png" 
-              alt="SarasLearn" 
+              src="/logobk.webp" 
+              alt="biologykingdom" 
               className="w-28 h-auto object-contain"
             />
           </motion.div>

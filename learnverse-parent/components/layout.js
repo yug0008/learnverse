@@ -7,7 +7,7 @@ export default function Layout({ children }) {
       <Header />
 
       {/* FIX: Add padding to prevent overlap */}
-      <main className="pt-[90px]" style={{ minHeight: "80vh" }}>
+      <main className="pt-[77px]" style={{ minHeight: "80vh" }}>
         {children}
       </main>
 

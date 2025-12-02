@@ -6,7 +6,9 @@ import {
   HiCog, 
   HiShieldCheck, 
   HiChartBar,
+  HiOutlineFolderOpen,
   HiDocumentText,
+  HiOutlineCalculator,
   HiLogout
 } from 'react-icons/hi'
 
@@ -15,6 +17,8 @@ export default function Sidebar({ user, onLogout }) {
   
   const navigation = [
     { name: 'Dashboard', href: '/admin/dashboard', icon: HiHome },
+    { name: 'Formulacards', href: '/admin/formulacards', icon: HiOutlineCalculator },
+    { name: 'Content-Manager', href: '/admin/content-manager', icon: HiOutlineFolderOpen },
     { name: 'User Management', href: '/admin/users', icon: HiUsers },
     { name: 'Analytics', href: '/admin/analytics', icon: HiChartBar },
     { name: 'Banners', href: '/admin/banners', icon: HiDocumentText },

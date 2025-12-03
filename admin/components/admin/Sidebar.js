@@ -5,6 +5,7 @@ import {
   HiUsers, 
   HiCog, 
   HiShieldCheck, 
+  HiClipboardList,
   HiChartBar,
   HiOutlineFolderOpen,
   HiDocumentText,
@@ -19,9 +20,10 @@ export default function Sidebar({ user, onLogout }) {
     { name: 'Dashboard', href: '/admin/dashboard', icon: HiHome },
     { name: 'Formulacards', href: '/admin/formulacards', icon: HiOutlineCalculator },
     { name: 'Content-Manager', href: '/admin/content-manager', icon: HiOutlineFolderOpen },
-    { name: 'User Management', href: '/admin/users', icon: HiUsers },
-    { name: 'Analytics', href: '/admin/analytics', icon: HiChartBar },
     { name: 'Banners', href: '/admin/banners', icon: HiDocumentText },
+    { name: 'PYQ/DPP Questions', href: '/admin/questions', icon: HiClipboardList },
+    { name: 'Analytics', href: '/admin/analytics', icon: HiChartBar },
+    
     { name: 'Security', href: '/admin/security', icon: HiShieldCheck },
     { name: 'Settings', href: '/admin/settings', icon: HiCog },
   ]
